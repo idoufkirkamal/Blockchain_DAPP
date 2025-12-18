@@ -5,11 +5,12 @@ import 'package:flutter/services.dart';
 import 'package:http/http.dart';
 import 'package:web3dart/web3dart.dart';
 import 'package:web_socket_channel/io.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class ContractLinking extends ChangeNotifier {
-  final String _rpcUrl = "http://127.0.0.1:7545";
-  final String _wsUrl = "ws://127.0.0.1:7545/";
-  final String _privateKey = "Enter Private Key"; // You need to replace this with your private key from Ganache
+  final String _rpcUrl = dotenv.env['RPC_URL'] ?? "http://127.0.0.1:7545";
+  final String _wsUrl = dotenv.env['WS_URL'] ?? "ws://127.0.0.1:7545/";
+  final String _privateKey = dotenv.env['PRIVATE_KEY'] ?? "";
 
   late Web3Client _client;
   bool isLoading = true;
