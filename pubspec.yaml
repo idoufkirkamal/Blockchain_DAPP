@@ -1,0 +1,25 @@
+name: hello_world_dapp
+description: A Flutter DApp project for blockchain interaction.
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^4.3.3
+  web3dart: ^1.2.3
+  http: ^0.12.2
+  web_socket_channel: ^1.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - src/artifacts/HelloWorld.json
